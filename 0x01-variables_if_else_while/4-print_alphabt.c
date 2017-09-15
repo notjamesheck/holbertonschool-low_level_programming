@@ -1,15 +1,15 @@
 #include <stdio.h>
 
-/*
-*  main - Entry point
+/**
+* main - Entry point
 *
-* Return: Always 0 (success)
+* Return: Always 0 (Success)
 */
 int main(void)
 {
-	int i;
+	int i = 'a';
 
-	for (i = 'a'; i <= 'z'; i++)
+	while (i <= 'z')
 	{
 		if (i == 'q' || i == 'e')
 		{
@@ -17,6 +17,7 @@ int main(void)
 		}
 
 		putchar(i);
+		i++;
 	}
 
 	putchar('\n');
