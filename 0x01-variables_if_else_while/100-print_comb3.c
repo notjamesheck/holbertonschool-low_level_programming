@@ -7,24 +7,23 @@
  */
 int main(void)
 {
-	int a = '0', b = '1';
+	int a, b;
 
-	while (a < '9')
+	for (a = '0'; a <= '9'; a++)
 	{
-		while (b <= '9')
+		for (b = '0'; b <= '9'; b++)
 		{
-			putchar(a);
-			putchar(b);
-
-			if (a < '8' || b < '9')
+			if (b > a)
 			{
-			putchar(',');
-			putchar(' ');
+				putchar(a);
+				putchar(b);
+				if (b != '9' || b - a != 1)
+				{
+					putchar(',');
+					putchar(' ');
+				}
 			}
-			b++;
 		}
-		a++;
-		b = a + 1;
 	}
 	putchar('\n');
 	return (0);
