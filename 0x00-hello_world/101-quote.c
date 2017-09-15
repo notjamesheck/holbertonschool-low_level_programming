@@ -9,9 +9,9 @@
 */
 int main(void)
 {
-	char str[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
+	char korpar[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
 
-	write(2, str, strlen(str));
+	write(2, korpar, strlen(korpar));
 
 	return (1);
 }
