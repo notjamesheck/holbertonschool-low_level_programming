@@ -1,8 +1,8 @@
 #include "holberton.h"
 
 /**
-* _islower - check if int c lowercase
-* int c - parameter
+* _isalpha - check if int c lowercase
+* @c: parameter
 * Return: 1 if true, 0 if false
 */
 int _isalpha(int c)
