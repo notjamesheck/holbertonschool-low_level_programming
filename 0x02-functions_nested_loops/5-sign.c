@@ -1,8 +1,8 @@
 #include "holberton.h"
 
 /**
- * main - check the code for Holberton School students.
- *
+ * print_sign - print +, - or 0
+ * @n: int parameter
  * Return: Always 0.
  */
 int print_sign(int n)
@@ -18,7 +18,7 @@ int print_sign(int n)
 		return (-1);
 	}
 	else
-	
+
 	_putchar('0');
 	return (0);
 }
