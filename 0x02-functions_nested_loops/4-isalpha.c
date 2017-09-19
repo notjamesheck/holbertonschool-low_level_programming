@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
-* _isalpha - check if int c is alphanumeric 
+* _isalpha - check if int c is alphanumeric
 * @c: int parameter
 * Return: 1 if true, 0 if false
 */
