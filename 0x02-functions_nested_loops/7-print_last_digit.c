@@ -1,10 +1,10 @@
 #include "holberton.h"
 
 /**
- * main - check the code for Holberton School students.
- *
- * Return: Always 0.
- */
+* print_last_digit - check the code for Holberton School students.
+* @r: int parameter
+* Return: Always 0.
+*/
 int print_last_digit(int r)
 {
 	if (r < 0)
