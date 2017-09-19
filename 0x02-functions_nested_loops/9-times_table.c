@@ -1,20 +1,20 @@
 #include "holberton.h"
 
 /**
- * main - check the code for Holberton School students.
- *
- * Return: Always 0.
- */
+* times_table - check the code for Holberton School students.
+*
+* Return: Always 0.
+*/
 void times_table(void)
 {
-	int rich, homi, qwon; 
+	int rich, homi, qwon;
 
 	for (rich = 0; rich < 10; rich++)
 	{
 		for (homi = 0; homi < 10; homi++)
 		{
-			qwon = homi * rich; 
-			
+			qwon = homi * rich;
+
 			if (homi == 0)
 			{
 				_putchar(qwon + '0');
