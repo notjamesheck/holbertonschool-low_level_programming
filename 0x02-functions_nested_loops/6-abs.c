@@ -1,10 +1,10 @@
 #include "holberton.h"
 
 /**
- * main - check the code for Holberton School students.
- *
- * Return: Always 0.
- */
+* _abs - convert to absolute value
+* @r: int parameter
+* Return: Always r.
+*/
 int _abs(int r)
 {
 
