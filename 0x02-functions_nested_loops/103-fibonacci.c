@@ -11,7 +11,7 @@ int main(void)
 
 	while ((d - c) > 0)
 	{	
-		if ((d - c) > 0) 
+		if (c % 2 == 0) 
 		{
 			count = count + c;	
 		}	
