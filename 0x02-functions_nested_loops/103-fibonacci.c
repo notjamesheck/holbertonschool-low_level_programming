@@ -10,11 +10,11 @@ int main(void)
 	int count = 0, a = 1, b = 1, c = 1, d = 4000000;
 
 	while ((d - c) > 0)
-	{	
-		if (c % 2 == 0) 
+	{
+		if (c % 2 == 0)
 		{
-			count = count + c;	
-		}	
+			count = count + c;
+		}
 		a = b;
 		b = c;
 		c = a + b;
