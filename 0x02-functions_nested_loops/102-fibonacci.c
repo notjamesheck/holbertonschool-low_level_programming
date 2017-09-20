@@ -7,16 +7,17 @@
 */
 int main(void)
 {
-	int a = 1, b = 1, c = 1, d;
+	long int a = 1, b = 1, c = 1;
+	int d;
 
 	for (d = 0; d < 50; d++)
 	{
 		if (d != 49)
 		{
-			printf("%i, ", c);
+			printf("%ld, ", c);
 		}
 		else
-			printf("%i", c);
+			printf("%ld", c);
 		a = b;
 		b = c;
 		c = a + b;
