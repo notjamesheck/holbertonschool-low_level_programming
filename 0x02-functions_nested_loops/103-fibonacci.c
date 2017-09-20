@@ -7,22 +7,19 @@
 */
 int main(void)
 {
-	int a = 1, b = 1, c = 1, d = 4000000;
+	int count = 0, a = 1, b = 1, c = 1, d = 4000000;
 
 	while ((d - c) > 0)
 	{	
 		if ((d - c) > 0) 
-		printf("%d, ", c);
-		
-		else if ((d - c) < 0)
 		{
-		printf("%d", c);
-		}
+			count = count + c;	
+		}	
 		a = b;
 		b = c;
 		c = a + b;
 	}
-	printf("\n");
+	printf("%d\n", count);
 	return (0);
 }
 
