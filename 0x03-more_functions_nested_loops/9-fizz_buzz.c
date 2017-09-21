@@ -26,6 +26,7 @@ int main(void)
 		else
 			printf("%d", le);
 
+		if (le != 100)
 		printf(" ");
 	}
 	printf("\n");
