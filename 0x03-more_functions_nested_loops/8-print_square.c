@@ -9,6 +9,10 @@ void print_square(int size)
 {
 	int col, row = size;
 
+	if (size == 0)
+	{
+		_putchar('\n');	
+	} 
 	while (row > 0)
 	{
 		col = size;
