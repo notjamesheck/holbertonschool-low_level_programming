@@ -7,20 +7,20 @@
 */
 int main(void)
 {
-	long int num = 612852475143, prod;
-	long int div = 2;
+	long int num = 612852475143, div = 2;
 
-	while (div <= prod)
+	while (div < num)
 	{
-		if (prod % div != 0)
+		if (num % div != 0)
 		{
 			div++;
 		}
-		else if (prod % div == 0)
+		else if (num % div == 0)
 		{
-			prod = num / div;
+			num = num / div;
+			div = 2;
 		}
 	}
-	printf("%ld\n", div);
+	printf("%ld\n", num);
 	return (0);
 }
