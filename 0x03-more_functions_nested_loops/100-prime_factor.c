@@ -21,6 +21,6 @@ int main(void)
 			prod = num / div;
 		}
 	}
-	printf("the largest common factor is %ld\n", div);
+	printf("%ld\n", div);
 	return (0);
 }
