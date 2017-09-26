@@ -13,7 +13,7 @@ void puts_half(char *str)
 	{}
 	while (c <= ((i - 1) / 2))
 	{
-		_putchar(*str + (c + (i / 2)));
+		_putchar(*(str + (c + ((i / 2)))));
 		c++;
 	}
 	_putchar('\n');
