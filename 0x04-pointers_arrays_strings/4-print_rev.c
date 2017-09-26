@@ -9,12 +9,12 @@ void print_rev(char *str)
 {
 	int c;
 
-	for (c = 0; *str; c++, str++)
+	for (c = 0; *(str + c); c++)
 	{}
+	c = c - 1;
 	while (c >= 0)
 	{
-		str--;
-		_putchar(*str);
+		_putchar(*(str + c));
 		c--;
 	}
 	_putchar('\n');
