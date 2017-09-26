@@ -16,17 +16,17 @@ void puts_half(char *str)
 
 	if (i % 2 == 0)
 	{
-		while (c <= ((i - 1) / 2))
+		while (c <= ((i / 2)))
 		{
-			_putchar(*(str + (c + ((i  / 2)))));
+			_putchar(*(str + (c + ((i / 2)))));
 			c++;
 		}
 	}
 	else if (i % 2 != 0)
 	{
-		while (c <= ((i - 1) / 2))
+		while (c <= (((i - 1) / 2)))
 		{
-			_putchar(*(str + (c + ((i - 1)  / 2))));
+			_putchar(*(str + (c + (((i - 1) / 2)))));
 			c++;
 		}
 	}
