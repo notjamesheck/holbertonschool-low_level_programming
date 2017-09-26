@@ -7,7 +7,7 @@
 */
 int main(void)
 {
-	char *str = "";
+	char *str = "0123456789";
 
 	/*str = "0123456789";*/
 	puts_half(str);
