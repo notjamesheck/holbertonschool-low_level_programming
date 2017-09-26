@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
-* puts2 - 
+* puts2 - Entry point
 * @str: pointer to string
 * Return: void, print every other char
 */
