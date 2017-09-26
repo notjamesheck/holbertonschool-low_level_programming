@@ -1,6 +1,5 @@
 #include "holberton.h"
 #include <stdio.h>
-
 /**
 * print_array - Entry point
 * @a: array pointer
@@ -13,13 +12,13 @@ void print_array(int *a, int n)
 
 	while (c < n)
 	{
-		printf("%d", (*(a + c)));
-		if ((c + 1) == n)
+		printf("%d", *(a + c));
+
+		if ((c + 1) != n)
 		{
-			printf("\n");
-		}
-		else
 			printf(", ");
+		}
 		c++;
 	}
+	printf("\n");
 }
