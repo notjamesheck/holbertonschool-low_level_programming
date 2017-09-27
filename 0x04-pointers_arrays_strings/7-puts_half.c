@@ -1,5 +1,5 @@
 #include "holberton.h"
-
+#include <stdio.h>
 /**
 * puts_half - Entry point
 * @str: pointer to char array
@@ -7,22 +7,25 @@
 */
 void puts_half(char *str)
 {
-	int i = 0, c = 0;
+	int i;
 
-	if (*str != '\0')
+	while (str[i])
 	{
-		for (i = 0; *(str + i) != '\0'; i++)
-		{}
+		i++;
+	}
 
-		if (i % 2 != 0)
-		i -= 1;
-		else 
-		i += 1;
+	if (i % 2 != 0)
+	{
+		i = i + 1;
+	}
+	
+	i = i / 2;
 
-		for (i = i / 2; (*(str + (c + i))); c++)
-		{
-			_putchar(*(str + (c + i)));
-		}
+	while (str[i])
+	{
+		_putchar(str[i]);
+		i++;
 	}
 	_putchar('\n');
+			
 }
