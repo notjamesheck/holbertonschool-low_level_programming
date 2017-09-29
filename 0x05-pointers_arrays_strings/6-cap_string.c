@@ -37,7 +37,7 @@ char *cap_string(char *p)
 			{
 				p[i] -= 32;
 			}
-			
+
 			if (p[i - 1] == ',' || p[i - 1] == '?')
 			{
 				p[i] -= 32;
