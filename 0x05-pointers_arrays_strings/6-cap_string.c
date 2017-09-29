@@ -13,6 +13,11 @@ char *cap_string(char *p)
 	{
 		if (p[i] >= 'a' && p[i] <= 'z')
 		{
+			if (i == 0)
+			{
+				p[i] -= 32;
+			}
+
 			if (p[i - 1] == ' ' || p[i - 1] == '	' || p[i - 1] == '\n')
 			{
 				p[i] -= 32;
