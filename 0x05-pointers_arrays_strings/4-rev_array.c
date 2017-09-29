@@ -1,5 +1,5 @@
 #include "holberton.h"
-
+#include <stdio.h>
 /**
 * reverse_array - Entry point
 * @a: pointer to an int array
@@ -11,12 +11,13 @@ void reverse_array(int *a, int n)
 	int i = 0;
 	int *begin = a;
 	int *end = a;
-	char temp;
+	int temp = 0;
 
 	for (i = 0; i <= n / 2; n--, i++)
 	{
-		temp = begin[i];
-		begin[i] = end[n - 1];
-		end[n - 1] = temp;
+printf("i = %d, n = %d, begin[i] = %d, temp = %d, end[n-1] = %d\n", i, n, begin[i], temp, end[n-1]);
+		temp = end[n - 1];
+		end[n - 1] = begin[i];
+		begin[i] = temp;
 	}
 }
