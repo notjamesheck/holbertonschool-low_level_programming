@@ -7,32 +7,20 @@
 */
 char *leet(char *i)
 {
-	int x;
+	int x = 0, y = 0;
+	char tim2[] = "4433007711";
+	char tim1[] = "AaEeOoTtLl";
 
 	while (i[x])
 	{
-		if (i[x] == 'a' || i[x] == 'A')
+		for (y = 0; tim1[y] != '\0'; y++)
 		{
-			i[x] = '4';
-		}
-		else if (i[x] == 'e' || i[x] == 'E')
-		{
-			i[x] = '3';
-		}
-		else if (i[x] == 'o' || i[x] == 'O')
-		{
-			i[x] = '0';
-		}
-		else if (i[x] == 't' || i[x] == 'T')
-		{
-			i[x] = '7';
-		}
-		else if (i[x] == 'l' || i[x] == 'L')
-		{
-			i[x] = '1';
+			if (i[x] == tim1[y])
+			{
+				i[x] = tim2[y];
+			}
 		}
 		x++;
 	}
 	return (i);
 }
-
