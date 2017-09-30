@@ -85,4 +85,6 @@ char *string_toupper(char *p);
 
 char *cap_string(char *);
 
+char *leet(char *i);
+
 #endif /* HOLBERTON_H */
