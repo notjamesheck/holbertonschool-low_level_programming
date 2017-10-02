@@ -1,5 +1,5 @@
 #include "holberton.h"
-
+#include <stdio.h>
 /**
 * _strchr - Entry point
 * @s: pointer to a char array
@@ -16,5 +16,5 @@ char *_strchr(char *s, char c)
 		}
 		s++;
 	}
-	return (s);
+	return (0);
 }
