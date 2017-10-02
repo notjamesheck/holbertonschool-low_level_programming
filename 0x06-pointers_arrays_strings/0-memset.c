@@ -5,6 +5,7 @@
 * @s: pointer to an char array
 * @b: char value to overwrite value at s
 * @n: # of times to write b to s
+* Return: pointer to char
 */
 char *_memset(char *s, char b, unsigned int n)
 {
