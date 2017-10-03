@@ -1,5 +1,5 @@
 #include "holberton.h"
-#include <stdio.h>
+
 /**
 * print_chessboard - Entry point
 * @a: pointer to a char array
