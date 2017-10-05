@@ -26,7 +26,7 @@ int _count(char *s, char *len, int length)
 	{
 		return (0);
 	}
-	if (length > 0)
+	if (length <= 0)
 	{
 		return (1);
 	}
