@@ -11,7 +11,7 @@ int _strlen_recursion(char *s)
 	{
 		return (_strlen_recursion(s + 1) + 1);
 	}
-	return (-1);
+	return (0);
 }
 /**
 * _count - Entry point
@@ -45,7 +45,7 @@ int is_palindrome(char *s)
 	{
 		return (1);
 	}
-	len = _strlen_recursion(s);
-	length = (len / 2) + 1;
+	len = _strlen_recursion(s) - 1;
+	length = (len / 2);
 	return (_count(s, s + len, length));
 }
