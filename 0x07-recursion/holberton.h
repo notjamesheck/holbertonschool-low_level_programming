@@ -121,6 +121,8 @@ int _sqrt_recursion(int n);
 
 int is_prime_number(int n);
 
+int is_palindrome(char *s);
+
 #define NULL ((char *)0)
 
 #endif /* HOLBERTON_H */
