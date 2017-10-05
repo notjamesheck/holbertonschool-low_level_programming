@@ -1,5 +1,10 @@
 #include "holberton.h"
-
+/**
+* _calc - prototype
+* @n: int parametet
+* @c: int parameter
+* Return: int
+*/
 int _calc(int n, int c);
 /**
 * _sqrt_recursion - Entry point
@@ -24,14 +29,14 @@ int _sqrt_recursion(int n)
 }
 
 /**
-* calc - find square
+* _calc - find square
 * @n: int parameter
 * @c: int parameter
 * Return: int
 */
 int _calc(int n, int c)
 {
-	if ((c *c) == n)
+	if ((c * c) == n)
 	{
 		return (c);
 	}
