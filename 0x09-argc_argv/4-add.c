@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 	{
 		for (s = 0; argv[c][s] != '\0'; s++)
 		{
-			if (isdigit(argv[c][s] >= '0' && argv[c][s] <= '9'))
+			if (isdigit(argv[c][s]))
 				continue;
 			else
 			{
