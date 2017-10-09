@@ -9,9 +9,9 @@
 */
 int main(int argc, char *argv[])
 {
-	int count = 1;
+	int c = 1;
 	int sum = 0;
-	int sec = 0;
+	int s = 0;
 
 	if (argc == 2)
 	{
@@ -25,17 +25,17 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 
-	for (count = 1; count < argc; count++)
+	for (c = 1; c < argc; c++)
 	{
-		for (sec = 0; argv[count][sec] != '\0'; sec++)
+		for (s = 0; argv[c][s] != '\0'; s++)
 		{
-			if (!(argv[count][sec] >= '0' && argv[count][sec] <= '9'))
+			if (!(argv[c][s] >= '0' && argv[c][s] <= '9'))
 			{
 				printf("Error\n");
 				return (1);
 			}
 		}
-		sum += atoi(argv[count]);
+		sum += atoi(argv[c]);
 	}
 	printf("%d\n", sum);
 	return (0);
