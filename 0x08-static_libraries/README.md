@@ -1,1 +1,1 @@
-Static library exercises for Holberton school
+Static Library Exercises for Holberton School
