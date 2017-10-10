@@ -15,8 +15,6 @@ int main(int argc, char *argv[])
 	int val[] = {25, 10, 5, 2, 1};
 	int count = 0, i = 0;
 
-	printf("argc = %d\n", argc);
-
 	if (argc != 2)
 	{
 		printf("Error\n");
@@ -33,7 +31,6 @@ int main(int argc, char *argv[])
 
 	while (val[i] != '\0')
 	{
-		printf("I'm in\n");
 		if (num >= val[i])
 		{
 			num -= val[i];
@@ -42,11 +39,6 @@ int main(int argc, char *argv[])
 		else
 		i++;
 	}
-	printf("*val = %d\n", *val);
-	printf("num = %d\n", num);
-	printf("this iz le count %d\n", count + num);
-
-
-
+	printf("%d\n", count + num);
 	return (0);
 }
