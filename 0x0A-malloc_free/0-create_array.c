@@ -9,26 +9,24 @@
 */
 char *create_array(unsigned int size, char c)
 {
+	char *buff = NULL;
 	unsigned int i = 0;
-	char *buff;
 
 	if (size == 0)
 	{
 		return (NULL);
 	}
+	buff = (char *)malloc((size) * sizeof(char));
 
-	if (c == '\0')
+	if (buff == NULL)
 	{
 		return (NULL);
 	}
-
-	buff = malloc((sizeof(char) * size) + 1);
-
-	while (i < size)
+	for (i = 0; i < size; i++)
 	{
 		buff[i] = c;
-		i++;
 	}
+	buff[i] = '\0';
 
 	return (buff);
 }
