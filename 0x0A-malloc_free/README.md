@@ -1,1 +1,1 @@
-Argv argc exercises for Holberton school
+Malloc exercises for Holberton school

@@ -19,7 +19,7 @@ char *create_array(unsigned int size, char c)
 
 	buff = malloc(sizeof(unsigned int) * size);
 
-	while (i < size)
+	while (i <= size)
 	{
 		buff[i] = c;
 		i++;
