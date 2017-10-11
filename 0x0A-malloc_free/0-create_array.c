@@ -17,22 +17,17 @@ char *create_array(unsigned int size, char c)
 		return (NULL);
 	}
 
-	if (c == 0)
-	{
-		return (0);
-	}
+	buff = (char *)malloc(sizeof(char) * size);
 
-	buff = (char *)malloc(sizeof(unsigned int) * size);
+	if (buff == NULL)
+	{
+		return (NULL);
+	}
 
 	while (i < size)
 	{
 		buff[i] = c;
 		i++;
-	}
-
-	if (buff == NULL)
-	{
-		return (NULL);
 	}
 
 	return (buff);
