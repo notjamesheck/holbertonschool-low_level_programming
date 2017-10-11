@@ -22,12 +22,7 @@ char *create_array(unsigned int size, char c)
 		return (NULL);
 	}
 
-	buff = (char *)malloc(sizeof(char) * size);
-
-	if (buff == NULL)
-	{
-		return (NULL);
-	}
+	buff = (char *)malloc(sizeof(unsigned int) * size);
 
 	while (i < size)
 	{
