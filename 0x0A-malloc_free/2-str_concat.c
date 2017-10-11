@@ -42,7 +42,9 @@ char *str_concat(char *s1, char *s2)
 	len += _strlen_recursion(s2);
 	if (len == 0)
 	{
-		return ('\0');
+		cat = malloc(sizeof(char));
+		cat[0] = '\0';
+		return (cat);
 	}
 	else
 	cat = malloc(len + 1);
@@ -53,11 +55,9 @@ char *str_concat(char *s1, char *s2)
 		for (i = 0; s1[i]; i++)
 			cat[i] = s1[i];
 
-
 	if (*s2 != '\0')
 		for (a = 0; s2[a]; a++)
 			cat[a + i] = s2[a];
-
 
 	cat[a + i] = '\0';
 	return (cat);
