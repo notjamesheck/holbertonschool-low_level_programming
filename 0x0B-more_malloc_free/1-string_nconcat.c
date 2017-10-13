@@ -2,6 +2,19 @@
 #include <stdio.h>
 #include "holberton.h"
 /**
+* _strlen_recursion - Entry point
+* @s: pointer to char array
+* Return: void, int length of string
+*/
+int _strlen_recursion(char *s)
+{
+	if (*s != '\0')
+	{
+		return (_strlen_recursion(s + 1) + 1);
+	}
+	return (0);
+}
+/**
 * cathelp - Entry point
 * @str: char pointer
 * @s1: char pointer
@@ -23,7 +36,7 @@ while (b > len)
     str[a + b] = s2[b];
     b++;
 }
-str[a + b] = ‘\0’;
+str[a + b] = '\0';
 return (str);
 }
 /**
@@ -36,7 +49,7 @@ return (str);
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 char *str = NULL;
-char *nul = “”;
+char *nul = "";
 unsigned int s2len = 0;
 
 if (s1 == NULL)
@@ -47,7 +60,7 @@ if (s2 == NULL || n == 0)
 {
     s2 = nul;
 }
-if (n >= _strlen_recursion(s2))
+if ((int)n >= _strlen_recursion(s2))
 {
     s2len = _strlen_recursion(s2);
 }
@@ -57,6 +70,6 @@ else
 str = malloc(_strlen_recursion(s1) + s2len);
 if (str == NULL)
 return (NULL);
-else
-return(cathelp(str, s1, s2, s2len));
 
+return (cathelp(str, s1, s2, s2len));
+}
