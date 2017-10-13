@@ -9,20 +9,20 @@
 */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-void * ret = NULL;
-unsigned int i = 0, val = nmemb * size;
+	void *ret = NULL;
+	unsigned int i = 0, val = nmemb * size;
 
-if (nmemb == 0 || size == 0)
-    return (NULL);
+	if (nmemb == 0 || size == 0)
+    		return (NULL);
 
-ret = malloc(nmemb * size) 
-if (ret == NULL)
-{
-    return (NULL);
-}
-for (; i < val; i++)
-{
-ret[i] = 0; 
-}
-return (ret)
+	ret = malloc(nmemb * size); 
+	if ((int)ret == NULL)
+	{
+	    return (NULL);
+	}
+	for (i = 0; i < val; i++)
+	{
+	(int)ret[i] = 0; 
+		}
+	return (ret);
 }

@@ -31,7 +31,7 @@ while (s1[a])
     a++;  
 }
 
-while (b > len)
+while (b < len)
 {
     str[a + b] = s2[b];
     b++;
