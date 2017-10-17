@@ -29,6 +29,7 @@ char *_strcpy(char *dest, char *src)
 		dest[i] = src[i];
 		i++;
 	}
+	dest[i] = '\0';
 	return (dest);
 }
 /**
@@ -38,7 +39,7 @@ char *_strcpy(char *dest, char *src)
 */
 char *dogdup(char *s)
 {
-	char *doge = malloc(_strlen(s) + 1);
+	char *doge = malloc(sizeof(char) * (_strlen(s) + 1));
 
 	if (doge == NULL)
 		return (NULL);
@@ -55,10 +56,11 @@ char *dogdup(char *s)
 */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *new = malloc(sizeof(dog_t));
+	dog_t *new = NULL;
 	char *nam = NULL;
 	char *own = NULL;
 
+	new = malloc(sizeof(dog_t));
 	if (new == NULL)
 		return (NULL);
 
