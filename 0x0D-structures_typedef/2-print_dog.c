@@ -1,6 +1,12 @@
 #include <stdio.h>
 #include "dog.h"
 #include <stdlib.h>
+
+/**
+* print_dog - Entry point
+* @d: struct pointer
+* Return: void
+*/
 void print_dog(struct dog *d)
 {
 	if (d != NULL)
@@ -18,7 +24,7 @@ void print_dog(struct dog *d)
 		}
 		else
 		printf("Age: %.6f\n", d->age);
-		
+
 		if (d->owner == 0)
 		{
 			printf("Owner: (nil)\n");
