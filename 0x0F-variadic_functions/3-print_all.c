@@ -12,8 +12,12 @@ void print_all(const char *const format, ...)
 	int a = 0;
 	va_list ap;
 
+	while (format == NULL)
+	{
+		printf("\n");
+		return; }
 	va_start(ap, format);
-	while (format[a] && format != NULL)
+	while (format[a])
 	{
 		switch (format[a])
 		{
