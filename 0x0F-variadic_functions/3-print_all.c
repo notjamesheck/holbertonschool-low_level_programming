@@ -8,7 +8,7 @@
 */
 void print_all(const char *const format, ...)
 {
-	char c, *s;
+	char *s;
 	int i, a = 0;
 	float f;
 	va_list ap;
@@ -19,22 +19,19 @@ void print_all(const char *const format, ...)
 		switch (format[a])
 		{
 			case 'c': /* char */
-			c = va_arg(ap, int);
-			printf("%c", c);
+			printf("%c", va_arg(ap, int));
 			break;
 			case 'i': /* integer */
-			i = va_arg(ap, int);
-			printf("%d", i);
+			printf("%d", va_arg(ap, int));
 			break;
 			case 'f': /* float */
-			f = (float)va_arg(ap, double);
-			printf("%f", f);
+			printf("%f", (float)va_arg(ap, double));
 			break;
 			case 's': /* string */
 			s = va_arg(ap, char *);
 			if (s == NULL)
-				printf("(nil)");
-			else
+				s = "(nil)";
+
 			printf("%s", s);
 			break;
 			default:
@@ -42,7 +39,7 @@ void print_all(const char *const format, ...)
 			continue;
 		}
 		if (format[a + 1] != 0)
-			{printf(", "); }
+			printf(", ");
 
 		a++;
 	}
