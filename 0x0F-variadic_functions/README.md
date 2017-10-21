@@ -1,2 +1,2 @@
-# holbertonschool-low_level_programming
-Function pointer exercises for Holberton School
+#holbertonschool-low_level_programming
+Variadic function exercises for Holberton School
