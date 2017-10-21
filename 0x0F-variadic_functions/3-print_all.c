@@ -13,7 +13,7 @@ void print_all(const char *const format, ...)
 	float f;
 	va_list ap;
 
-	va_start(ap, *format);
+	va_start(ap, format);
 	while (format[a])
 	{
 		switch (format[a])
