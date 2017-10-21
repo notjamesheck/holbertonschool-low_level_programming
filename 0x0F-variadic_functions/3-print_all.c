@@ -14,7 +14,7 @@ void print_all(const char *const format, ...)
 	va_list ap;
 
 	va_start(ap, format);
-	while (format[a])
+	while (format[a] && format != NULL)
 	{
 		switch (format[a])
 		{
@@ -43,9 +43,9 @@ void print_all(const char *const format, ...)
 		}
 		if (format[a + 1] != 0)
 			{printf(", "); }
-		else
-		printf("\n");
+
 		a++;
 	}
+	printf("\n");
 	va_end(ap);
 }
