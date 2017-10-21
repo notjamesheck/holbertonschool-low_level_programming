@@ -19,7 +19,7 @@ void print_all(const char *const format, ...)
 		switch (format[a])
 		{
 			case 'c': /* char */
-			c = (char) va_arg(ap, int);
+			c = va_arg(ap, int);
 			printf("%c", c);
 			break;
 			case 'i': /* integer */
@@ -27,7 +27,7 @@ void print_all(const char *const format, ...)
 			printf("%d", i);
 			break;
 			case 'f': /* float */
-			f = (float) va_arg(ap, int);
+			f = va_arg(ap, double);
 			printf("%f", f);
 			break;
 			case 's': /* string */
