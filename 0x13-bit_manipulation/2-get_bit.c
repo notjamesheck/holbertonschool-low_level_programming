@@ -9,7 +9,12 @@ int get_bit(unsigned long int n, unsigned int index)
 {
 	unsigned int shifted = 0;
 
+	if (index >= (sizeof(n) * 8))
+	{
+		return (-1); }
+
 	shifted = n >> index;
+
 	if ((shifted & 1) == 1)
 		return (1);
 	else if ((shifted & 1) == 0)
