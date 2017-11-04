@@ -155,6 +155,8 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 
 unsigned int binary_to_uint(const char *b);
 
+void print_binary(unsigned long int n);
+
 /* #define NULL ((char *)0) */
 
 #endif /* HOLBERTON_H */
