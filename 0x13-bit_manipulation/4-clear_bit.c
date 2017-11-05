@@ -7,7 +7,7 @@
 */
 int clear_bit(unsigned long int *n, unsigned int index)
 {
-	unsigned long int shift = 0;
+	unsigned long int shift = 1;
 
 	if (n == NULL)
 	{
@@ -16,6 +16,7 @@ int clear_bit(unsigned long int *n, unsigned int index)
 	if (((sizeof(unsigned long int)) * 8 - 1) < index)
 		return (-1);
 	shift = shift << index;
-	*n ^= shift;
+	*n &= ~shift;
+
 	return (1);
 }
