@@ -161,6 +161,8 @@ int get_bit(unsigned long int n, unsigned int index);
 
 int set_bit(unsigned long int *n, unsigned int index);
 
+int clear_bit(unsigned long int *n, unsigned int index);
+
 /* #define NULL ((char *)0) */
 
 #endif /* HOLBERTON_H */
