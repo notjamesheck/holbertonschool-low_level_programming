@@ -29,29 +29,24 @@ int main(int ac, char *av[])
 		red = read(f_from, buf, BUFSIZE);
 		if (red == -1)
 		{
-			free(buf);
+			free(buf),
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
 			exit(98); }
 		if ((write(f_to, buf, red)) == -1)
 		{
 			free(buf);
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
-			exit(99); }
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]), exit(99); }
 	} while (red == BUFSIZE);
-
 	if ((close(f_from)) == -1)
 	{
 		free(buf);
 		close(f_to);
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", f_from);
 		exit(100); }
-
 	if ((close(f_to)) == -1)
 	{
 		free(buf);
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", f_to);
-		exit(100); }
-
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", f_to), exit(100); }
 	free(buf);
 	return (0);
 }
