@@ -44,7 +44,8 @@ int main(int ac, char *av[])
 		return (0); }
 
 	do {
-		if ((read(f_from, buf, BUFSIZE)) == -1)
+		red = read(f_from, buf, BUFSIZE);
+		if (red == -1)
 		{
 			free(buf);
 			close(f_from);
