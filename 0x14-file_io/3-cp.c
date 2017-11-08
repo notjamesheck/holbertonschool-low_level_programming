@@ -1,6 +1,6 @@
 #include "holberton.h"
 #define PERM (S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH)
-#define BUFRSIZE 1024
+#define BUFSIZE 1024
 /**
 * main - Entry point
 * @ac: argument count
@@ -9,38 +9,68 @@
 */
 int main(int ac, char *av[])
 {
-	int from, to, n;
-	char bufr[BUFRSIZE];
+	int f_from, f_to, red;
+	char *buf;
 
 	if (ac != 3)
 	{
-		dprintf(STDERR_FILENO, “Usage: cp file_from file_to\n”);
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97); }
-
-	from = open(av[1], O_RDONLY);
-	if (from == -1)
+	if (av[1] == NULL)
 	{
-		dprintf(STDERR_FILENO, “Error: Can't read from file NAME_OF_THE_FILE\n”, from);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
 		exit(98); }
 
-	to = open(av[2], O_CREAT | O_TRUNC | O_WRONLY, PERM);
-	if (to == -1)
+	f_from = open(av[1], O_RDONLY);
+
+	if (f_from == -1)
 	{
-		dprintf(STDERR_FILENO, “Error: Can’t write to NAME_OF_THE_FILE\n”);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
+		exit(98); }
+
+	f_to = open(av[2], O_TRUNC | O_CREAT | O_WRONLY, PERM);
+
+	if (f_to == -1)
+	{
+		close(f_from);
+		dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", av[1]);
 		exit(99); }
 
-	n = read(from, bufr, BUFRSIZE);
-	write(to, bufr, n);
-	from = close(from);
-	if (from == -1)
+	buf = malloc(sizeof(char) * BUFSIZE);
+	if (buf == NULL)
 	{
-		dprintf(“Error: Can't close fd FD_VALUE\n”);
+		close(f_from);
+		close(f_to);
+		return (0); }
+
+	do {
+		red = read(f_from, buf, BUFSIZE);
+		if (red == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
+			exit(98); }
+		if ((write(f_to, buf, red)) == -1)
+		{
+			free(buf);
+			close(f_from);
+			close(f_to);
+			dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", av[1]);
+			exit(99); }
+	} while (red == BUFSIZE);
+
+	if ((close(f_from)) == -1)
+	{
+		free(buf);
+		close(f_to);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", f_from);
 		exit(100); }
 
-	to = close(from);
-	if (to == -1)
+	if ((close(f_to)) == -1)
 	{
-		dprintf(“Error: Can't close fd FD_VALUE\n”);
+		free(buf);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", f_to);
 		exit(100); }
+
+	free(buf);
 	return (0);
 }
