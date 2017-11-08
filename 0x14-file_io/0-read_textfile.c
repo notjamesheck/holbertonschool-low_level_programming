@@ -18,6 +18,10 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	ret = read(fd, buf, letters);
 	
 	write(STDOUT_FILENO, buf, ret);
+
+	close(fd);
+
+	free(buf);
 	
 	return (ret);
 }
