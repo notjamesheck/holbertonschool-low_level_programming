@@ -14,26 +14,25 @@ int _strlen(char *s)
 	return (c);
 }
 /**
-* create_file - Entry point
+* append_text_to_file - Entry point
 * @filename: pointer to string
 * @text_content: pointer to string
-* Return: file with user privileges and content
+* Return: file with appended content
 */
-int create_file(const char *filename, char *text_content)
+int append_text_to_file(const char *filename, char *text_content)
 {
-	int file, count;
+	int fd, count;
 	
-	if (filename == NULL || text_content == NULL)
+	if (filename == NULL)
 	{
 		return (-1); }
-	
-	file = open(filename, O_CREAT | O_TRUNC | O_RDWR, S_IRUSR | S_IWUSR);
-	if (file == -1)
+	fd = open(filename, O_APPEND | O_WRONLY);
+	if (fd == -1)
 	{
-		close(file);
+		close(fd);
 		return (-1); }
 	count = _strlen(text_content);
-	write(file, text_content, count);
-	close(file);
+	write(fd, text_content, count);
+	close(fd);
 	return (1);
 }
