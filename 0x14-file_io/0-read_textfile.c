@@ -1,7 +1,6 @@
 #include "holberton.h"
-
 /**
-* read_text - Entry point
+* read_textfile - Entry point
 * @filename: pointer to file
 * @letters: size_t parameter
 * Return: chars printed on success, 0 on failure
@@ -9,10 +8,10 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd, ret = 0;
-
 	char *buf = NULL;
 
 	buf = malloc((sizeof(char) * letters) + 1);
+
 	if (buf == NULL)
 	{
 		return (0); }
@@ -28,12 +27,8 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	{
 		free(buf);
 		return (0); }
-
 	write(STDOUT_FILENO, buf, ret);
-
 	close(fd);
-
 	free(buf);
-
 	return (ret);
 }
