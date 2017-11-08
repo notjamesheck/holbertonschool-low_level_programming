@@ -47,6 +47,9 @@ int main(int ac, char *av[])
 		red = read(f_from, buf, BUFSIZE);
 		if (red == -1)
 		{
+			free(buf);
+			close(f_from);
+			close(f_to);
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
 			exit(98); }
 		if ((write(f_to, buf, red)) == -1)
