@@ -27,6 +27,8 @@ int main(int ac, char *av[])
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
 		exit(99);
 	buf = malloc(sizeof(char) * BUFSIZE);
+	if (buf == NULL)
+		return (0);
 	do {
 		red = read(f_from, buf, BUFSIZE);
 		if (red == -1)
