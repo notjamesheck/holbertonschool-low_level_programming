@@ -33,7 +33,7 @@ int main(int ac, char *av[])
 	if (f_to == -1)
 	{
 		close(f_from);
-		dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", av[1]);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
 		exit(99); }
 
 	buf = malloc(sizeof(char) * BUFSIZE);
@@ -44,8 +44,7 @@ int main(int ac, char *av[])
 		return (0); }
 
 	do {
-		red = read(f_from, buf, BUFSIZE);
-		if (red == -1)
+		if ((read(f_from, buf, BUFSIZE)) == -1)
 		{
 			free(buf);
 			close(f_from);
@@ -57,7 +56,7 @@ int main(int ac, char *av[])
 			free(buf);
 			close(f_from);
 			close(f_to);
-			dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", av[1]);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
 			exit(99); }
 	} while (red == BUFSIZE);
 
