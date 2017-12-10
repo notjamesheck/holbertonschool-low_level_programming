@@ -4,7 +4,7 @@
 #include <stdlib.h>
 
 /**
-* add_nodeint - Entry point
+* add_dnodeint - Entry point
 * @head: new head node
 * @n: new head node value
 * Return: list with new head node
