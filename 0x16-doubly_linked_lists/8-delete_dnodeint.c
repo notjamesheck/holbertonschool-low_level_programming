@@ -17,6 +17,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	{
 		*head = (*head)->next;
 		free((*head)->prev);
+
 		return (1); }
 	while (i < index)
 	{
@@ -25,6 +26,8 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		{
 			return (-1); }
 		i++; }
+	((*head)->next)->prev = (*head)->prev;
+	((*head)->prev)->next = (*head)->next;
 	free(*head);
 	return (1);
 }
