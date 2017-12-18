@@ -15,9 +15,10 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 
 	temp = *h; /* temporarily save address of head */
 
-	if (*h == NULL || idx == 1) /* if head is null, makes new head*/
+	if (*h == NULL || idx == 0) /* if head is null, makes new head*/
 	{
-		add_dnodeint(h, n); } /* using add_dnode function */
+		new = add_dnodeint(h, n);
+		return (new); } /* using add_dnode function */
 
 	for (c = 1; idx > c; c++) /* go to index in list*/
 	{
@@ -28,7 +29,8 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 
 	if (temp->next == NULL) /* if last node */
 	{
-		add_dnodeint_end(h, n); }
+		new = add_dnodeint_end(h, n);
+		return (new); }
 
 	new = malloc(sizeof(listint_t)); /* malloc and null check */
 	if (new == NULL)
