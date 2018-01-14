@@ -12,7 +12,11 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *temp; /* place in array */
 	hash_node_t *new; /* new node */
 
-	if (key[0] == '\0') /* check for empty string */
+	if (key[0] == '\0' || value == NULL) /* check for empty string */
+	{
+		return (0);
+	}
+	if (ht == NULL || key == NULL)
 	{
 		return (0);
 	}
