@@ -11,37 +11,35 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	unsigned long int b = 0; /* this holds index */
 	hash_node_t *temp; /* place in array */
 	hash_node_t *new; /* new node */
-	char *keycopy;
-	char *valcopy;
 
 	if (key[0] == '\0' || value == NULL) /* check for empty string */
 	{
-		return (0);
-	}
+		return (0);	}
 	if (ht == NULL || key == NULL)
 	{
-		return (0);
-	}
-	keycopy = strdup(key);
-	valcopy = strdup(value);
+		return (0);	}
 	new = malloc(sizeof(hash_node_t)); /* create new node */
 	if (new == NULL) /* null check */
 	{
-		return (0);
-	}
-	new->key = keycopy; /* assign key and val */
-	new->value = valcopy;
+		return (0);	}
+	new->key = strdup(key); /* assign key and val */
+	new->value = strdup(value);
 	new->next = NULL;
 	b = key_index((const unsigned char *)key, ht->size); /* get index */
-	/* printf("the key is : %lu\n", b); */
 	if (!ht->array[b]) /* initial insertion */
 	{
-		/* printf("It's null in here!\n"); */
 		ht->array[b] = new;
-		return (1);
-	}
-	temp = ht->array[b]; /* existing nodes */
+		return (1); }
+	temp = ht->array[b];
+	while (temp)
+	{
+		if (strcmp(temp->key, new->key) == 0)
+		{
+			free(new);
+			temp->value = strdup(value);
+			return (1);	}
+		temp = temp->next; }
+	temp = ht->array[b];
 	new->next = temp;
 	ht->array[b] = new;
-	return (1);
-}
+	return (1); }
