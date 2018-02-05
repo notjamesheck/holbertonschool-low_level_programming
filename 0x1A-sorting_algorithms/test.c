@@ -1,9 +1,6 @@
 #include "sort.h"
-/**
-* insertion_sort_list - sorts list of integers in ascending order
-* @list: doubly-linked list
-* Return: void
-*/
+
+
 void insertion_sort_list(listint_t **list)
 {
 	int n; /* set int */
@@ -42,5 +39,4 @@ void insertion_sort_list(listint_t **list)
 				tmp->prev->next = ptr;
 				ptr->prev = tmp->prev;
 				tmp->prev = ptr;
-				ptr->next = tmp; } }
-		print_list(*list); } }
+				ptr->next = tmp; } } } }
