@@ -18,7 +18,7 @@ def island_perimeter(grid):
         if x == 1:
             break
         p = 0
-    if v == h:
+    if v == h or (v == 1 and h == 1):
         return (v * 4)
     elif v != h and v != 0 and h != 0:
         return (v * h)
@@ -39,19 +39,19 @@ if __name__ == "__main__":
     print(island_perimeter(grid))
     """12 expected"""
     grid = [
+        [1, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0],
-        [0, 1, 0, 0, 0, 0],
-        [0, 1, 0, 0, 0, 0],
-        [0, 1, 1, 1, 0, 0],
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0]
     ]
     print(island_perimeter(grid))
     """3 expected"""
     grid = [
         [0, 0, 0, 0, 0, 0],
-        [0, 1, 0, 0, 0, 0],
-        [0, 1, 0, 0, 0, 0],
-        [0, 1, 1, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0]
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 1]
     ]
     print(island_perimeter(grid))
