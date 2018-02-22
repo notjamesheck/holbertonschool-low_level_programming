@@ -21,37 +21,38 @@ def island_perimeter(grid):
     if v == h or (v == 1 and h == 1):
         return (v * 4)
     elif v != h and v != 0 and h != 0:
-        return (v * h)
+        return (2 * (v + h))
     else:
         return 0
 
 
 if __name__ == "__main__":
     """self test"""
-    """20 expected"""
+    """16 expected"""
     grid = [
-        [0, 1, 0, 0, 0, 0],
-        [0, 1, 0, 0, 0, 0],
-        [0, 1, 0, 0, 0, 0],
-        [0, 1, 1, 1, 1, 1],
-        [0, 0, 0, 0, 0, 0]
+        [1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1]
     ]
+    print("16 expected")
     print(island_perimeter(grid))
-    """ 12 expected"""
+    """ 20 expected"""
     grid = [
         [0, 0, 0, 0, 0, 0],
-        [0, 1, 1, 1, 0, 0],
         [0, 1, 1, 0, 0, 0],
+        [1, 1, 1, 0, 0, 0],
         [0, 1, 1, 1, 0, 0],
-        [0, 0, 0, 0, 0, 0]
+        [0, 0, 0, 1, 1, 1]
     ]
+    print("20 expected")
     print(island_perimeter(grid))
-    """4 expected"""
+    """28 expected"""
     grid = [
-        [0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 1]
+        [0, 1, 0, 0, 0, 1],
+        [1, 1, 0, 0, 0, 1],
+        [1, 1, 0, 1, 1, 1],
+        [0, 1, 1, 1, 0, 0],
+        [0, 0, 1, 1, 0, 1]
     ]
+    print("28 expected")
     print(island_perimeter(grid))
