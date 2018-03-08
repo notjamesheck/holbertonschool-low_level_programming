@@ -8,56 +8,33 @@
 */
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value)
 {
-	binary_tree_t *temp = NULL;
-	binary_tree_t *current = NULL;
-	int l = 1;
+	binary_tree_t *node = NULL;
 
-	temp = malloc(sizeof(binary_tree_t));
-	if (temp == NULL)
+	node = malloc(sizeof(binary_tree_t));
+
+	if (node == NULL)
 	{
-		/* puts("fail"); */
-		return (NULL);
-	}
-	temp->n = value;
-	temp->left = NULL;
-	temp->right = NULL;
+		return (NULL); }
+
+	node->n = value;
+	node->left = NULL;
+	node->right = NULL;
 
 	if (parent == NULL)
 	{
-		/* puts("new root"); */
-		return (temp);
-	}
-
-	current = parent;
-
-	while (l == 1)
+		parent = node;
+		parent->left = NULL;
+		parent->right = NULL; }
+	else
 	{
-		parent = current;
-
-		if (temp->n < parent->n)
+		if (value < parent->n)
 		{
-			current = current->left;
-
-			if (current == NULL)
-			{
-				/* printf("%d to the left\n", value); */
-				parent->left = temp;
-				l = 0;
-				break;
-			}
+			parent->left = node;
 		}
 		else
 		{
-			current = current->right;
-
-			if (current == NULL)
-			{
-				/* printf("%d to the right\n", value); */
-				parent->right = temp;
-				l = 0;
-				break;
-			}
+			parent->right = node;
 		}
 	}
-	return (temp);
+	return (node);
 }
