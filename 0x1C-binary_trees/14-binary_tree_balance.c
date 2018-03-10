@@ -9,7 +9,7 @@ size_t binary_tree_height(const binary_tree_t *tree)
 {
 	size_t x = 0, y = 0;
 
-	if (tree == NULL || (!tree->right && !tree->left))
+	if (tree == NULL)
 	{ /* if no children, tree is leaf, 0 */
 		return (0);
 	}
@@ -26,7 +26,7 @@ size_t binary_tree_height(const binary_tree_t *tree)
 		{
 			return (y); }
 	}
-	return (x);
+	return (0);
 }
 
 /**
@@ -36,19 +36,20 @@ size_t binary_tree_height(const binary_tree_t *tree)
 */
 int binary_tree_balance(const binary_tree_t *tree)
 {
-	size_t x = 0;
+	int x = 0, y = 0;
 
-	if (tree == NULL || (!tree->left && !tree->right))
+	if (tree == NULL /*|| (!tree->left && !tree->right)*/)
 	{
 		return (0);
 	}
 
-	if (!tree->left || !tree->right)
-	{
-		return (-1);
-	}
+	/* if (!tree->left || !tree->right) */
+	/* { */
+	/*	return (-1); */
+	/*} */
 
-	x += binary_tree_height(tree->left);
-	x -= binary_tree_height(tree->right);
-	return ((int)x);
+	x = (int)binary_tree_height(tree->left);
+	y = (int)binary_tree_height(tree->right);
+	/* printf("x = %d & y = %d\n", x, y); */
+	return (x - y);
 }
