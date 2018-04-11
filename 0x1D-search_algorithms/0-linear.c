@@ -1,6 +1,6 @@
 #include "search_algos.h"
 
-/*
+/**
  * size_t2int - safely convert size_t to int
  * @val: value to convert
  * Return: integer
@@ -8,9 +8,9 @@
 int size_t2int(size_t val)
 {
 	/* SO/questions/27490762/how-can-i-convert-to-size-t-from-int-safely */
-	return (val <= INT_MAX) ? (int)((ssize_t)val) : -1;
+	return ((val <= INT_MAX) ? (int)((ssize_t)val) : -1);
 }
-/*
+/**
  * linear_search - search for a given key and report success or failure.
  * @array: array to search
  * @size: size of array
